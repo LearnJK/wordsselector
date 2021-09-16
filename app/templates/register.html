@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<h1>Login</h1>
+{% if error %}
+<p class=error><strong>Error:</strong> {{ error }}
+{% endif %}
+<div class="register">
+    <form action="/register" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="" /><br>
+
+        <label for="email">Correo:</label>
+        <input type="text" id="email" name="email" value="" /><br>
+
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" value="" /><br>
+
+        <label for="grupo">Grupo:</label>
+        <select id="grupo" name="grupo" value="">
+            <option value='48'>Grupo 48</option>
+            <option value='61'>Grupo 61</option>
+            <option value='29'>Grupo 29</option>
+        </select><br>
+
+        <label for="proyecto">Nombre Proyecto:</label>
+        <input type="text" id="proyecto" name="proyecto" value="" /><br>
+
+        <input type="submit" id="login" value='Registrar'></input>
+    </form>
+</div>
+{% endblock %}

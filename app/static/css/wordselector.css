@@ -1,0 +1,10 @@
+body{
+    background-color: LightSteelBlue;
+}
+h1{
+    text-align: center;
+    text-shadow: 2px 2px 2px RebeccaPurple;
+}
+div.container{
+    margin: 0px;    
+}

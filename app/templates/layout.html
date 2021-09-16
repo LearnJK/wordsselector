@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="keywords" content="html, css, python" />
+    <meta name="description" content="Pagina para explirar los elementos de html y un poco de css" />
+    <meta name="author" content="https://github.com/Juanklg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="">
+	<title>WordSelector</title>		
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/wordselector.css') }}">
+	{% block head %}{% endblock %}
+</head>
+
+<body>
+	<header>
+		<div class="nav">
+			<h1 class="logo">WordSelector</h1>
+			<strong>
+				<nav>
+					<ul class="menu">
+						<li><a href="{{ url_for('logout') }}">Bye</a></li>
+					</ul>
+				</nav>
+			</strong>
+		</div>
+	</header>
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	<ul class=flashes>
+		{% for message in messages %}
+		<li>{{ message }}</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	{% endwith %}
+	<div class="container">
+		{% block body %}{% endblock %}
+	</div>
+</body>
+
+</html>
