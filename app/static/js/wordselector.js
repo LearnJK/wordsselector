@@ -2,7 +2,7 @@ console.log('Corriendo el word selector js');
 // Se levanta el elemento
 function handleDragStart(e) {
     this.style.opacity = '0.4';    
-    e.dataTransfer.setData("word", this);
+    e.dataTransfer.setData("word", e.target);
 }
 // Se suelta el elemento y se vuelve a poner visible
 function handleDragEnd(e) {//termina el jaloneo
@@ -11,12 +11,12 @@ function handleDragEnd(e) {//termina el jaloneo
 function testSr(e) {//Elemento aceptado
     console.log('elemento alojado');
 }
-    
+
 // Funciones para la caja
 
 // Se suelta un elemento en una caja q espera
 function handleDrop(e) {    
-    console.log('Tevas a quedar ok');
+    console.log('Te vas a quedar? ok');
     this.classList.remove('over');    
     let elemento = e.dataTransfer.getData('word');
     console.log(elemento);
