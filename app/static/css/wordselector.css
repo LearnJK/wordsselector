@@ -1,10 +1,87 @@
-body{
-    background-color: LightSteelBlue;
+div.app{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    background-color: PapayaWhip;
 }
-h1{
-    text-align: center;
-    text-shadow: 2px 2px 2px RebeccaPurple;
+
+div.texto,div.listas{
+    background-color: blueviolet;
+    max-height: 500px;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    /* box-shadow:0 6px 6px hsl(0deg 0% 0% / 0.3); */
+    box-shadow:
+        0 1px 1px hsl(0deg 0% 0% / 0.075),
+        0 2px 2px hsl(0deg 0% 0% / 0.075),
+        0 4px 4px hsl(0deg 0% 0% / 0.075),
+        0 8px 8px hsl(0deg 0% 0% / 0.075),
+        0 16px 16px hsl(0deg 0% 0% / 0.075);
 }
-div.container{
-    margin: 0px;    
+@media (max-width: 600px) {
+    div.texto,div.listas{
+        max-height: 170px;
+    }
+}
+
+div.texto{
+    max-width: 300px;
+    width: 100%;
+    overflow-y: scroll;
+}
+p.idea{
+    display: flex;
+    flex-flow: row wrap;
+    /* justify-content: center; */
+    margin: 7px;
+}
+p.idea > span{
+    background-color: chartreuse;
+    border-radius: 5px;
+    cursor: move;
+    color: hotpink;
+    margin: 2px;
+    padding: 2px;    
+}
+
+/* ---------------------------------------- */
+div.listas{    
+    width: 300px;
+    display: flex;
+    flex-flow: column;
+}
+div.lista{
+    margin: auto;
+    width: 80%;
+    height: 250px;
+    border-color: grey;
+    border-width: 5px;
+    border-radius: 10px;
+    border-style: dotted;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div.lista > p{
+    color: grey;
+    font-size: 60px;
+    font-weight: bolder;
+}
+/* -------------------------------------------- */
+
+.conten {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+.box {
+    border: 3px solid #666;
+    background-color: #ddd;
+    border-radius: .5em;
+    padding: 10px;
+    cursor: move;
+}
+.box.over {
+    border: 3px dotted #666;
 }

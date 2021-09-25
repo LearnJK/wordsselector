@@ -1,0 +1,50 @@
+body{
+    background-color: gray;
+}
+
+header h1 {
+    text-align: center;
+    text-shadow: 2px 2px 2px #663399;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+}
+
+main nav {
+    flex: 1;
+    display: flex;
+    -webkit-flex-direction: column;
+        flex-direction: column;
+}
+
+main .container {
+    -webkit-flex: 3;
+    -ms-flex: 3;
+    flex: 3; 
+    background-color: gray;    
+    padding: 10px;
+}
+
+@media (max-width: 600px) {
+    main, main nav{
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+    main nav{
+        -webkit-flex-direction: row;
+        flex-direction: row;
+    }
+}
+
+footer {
+    
+}
+
+div.container {
+    margin: 0px;
+}

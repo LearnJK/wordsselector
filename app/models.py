@@ -39,7 +39,26 @@ es decir si el texto tiene 100 palabras, las 100 palabras deben estar distribuid
 
 con pandas podemos procesar despues la longitud de las plabras, y hacer algunas trasnformaciones y estadisticas
 '''
-def createObjectWord(text):#esta creacion solo se realiza la primera vez
+# ------------------------------------user----------------------------------- #
+usuario = {}
+
+def getUserData(usuario='dev'):
+    user = {}
+    # user['texto'] = createObjectWord(original)
+    user['texto'] = actionCWT()
+    # user['views'] = ['wordselector','battleracing']
+    user['views'] = ['battleracing','wordselector'] 
+    user['listas'] = getList(user)
+    user['user'] = usuario
+    user['app'] = user['views'][0]
+    
+    return user
+# -----------------------------------listas---------------------------------- #
+def getList(user):  
+    listas = []
+    return listas
+
+def createWordText(text):#esta creacion solo se realiza la primera vez
     ps = []
     parrafos = text.split('\n')
     for p in parrafos:
@@ -56,15 +75,10 @@ def createObjectWord(text):#esta creacion solo se realiza la primera vez
             ps.append(lwords)    
     return ps
 
-def getList(user):  
-    listas = []
-    return listas
+def actionCWT(text=None):
+    if(text):
+        return createWordText(text)
+    else:
+        return createWordText(original)
 
-wsText = createObjectWord(original)
-
-def getUserData(user):
-    user = {}
-    # user['texto'] = createObjectWord(original)
-    user['texto'] = wsText
-    user['listas'] = getList(user)
-    return user
+# print('listas'.center(75,'-'))

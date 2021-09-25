@@ -2,26 +2,27 @@
 from flask import url_for, redirect, render_template, flash, g, session, request
 from app import app
 # from app.models import User
-from app.models import getUserData	
+from app.models import getUserData
 
-
-@app.route('/app',methods=['post','get'])
+@app.route('/app',methods=['get'])
 def apk():
 	if 'username' in session:
 		data=getUserData(session["username"])
-		data['username'] = session["username"]
+		args = dict(request.args)
+		if 'app' in args: 
+			app = args['app']
+			data['app'] = app
+		else: app = data['app']
 		if request.method == 'get':
-			return  render_template('app.html',data=data)
+			return  render_template(f'{app}.html',data=data)
 		else:
-			return  render_template('app.html',data=data)
+			return  render_template(f'{app}.html',data=data)
 	else:
 		return redirect(url_for('login'))
 
 @app.route('/')
-def index():
-	if 'username' in session:
-		return redirect(url_for('apk'))
-	return render_template('index.html')
+def index():	
+	return redirect(url_for('apk'))
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -32,10 +33,9 @@ def login():
 			return render_template('login.html', error=error)
 		else:
 			session['username'] = request.form['username']
-			flash('Inicio exitoso')
 			return redirect(url_for('apk'))
 	else:
-		return render_template('login.html', error=error)
+		return render_template('login.html', data={'error':error})
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -50,6 +50,16 @@ def register():
 def logout():
     session.pop('username', None)
     return redirect(url_for('index'))
+
+@app.route('/<param>', methods=['GET','POST'])
+def html(param=None):
+	if request.method == 'POST':
+		print(request.form)
+	else:
+		if 'username' in session:
+			return redirect(url_for('apk',app=param))
+		else:
+			return render_template('app.html',	data={'app':'MakerDream'})
 
 # @app.route('/new/')
 # @login_required

@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="html, css, python" />
+	<meta name="description" content="Pagina para explirar los elementos de html y un poco de css" />
+	<meta name="author" content="https://github.com/Juanklg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="icon" type="image/x-icon" href="">
+	<title>{{data.app}}</title>
+	<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/{{app}}.css') }}"> -->
+
+	<link rel="stylesheet" href="static/css/global.css">
+	<link rel="stylesheet" href="static/css/nav.css">
+	
+	{% block head %}{% endblock %}
+</head>
+
+<body>
+	<header>
+		<div class="nav">
+			<h1 class="logo">{{data.app}}</h1>
+			<strong>
+				<nav>
+					<ul class="menu">
+
+					</ul>
+				</nav>
+			</strong>
+		</div>
+	</header>
+	<main>
+		<nav>
+			{%if data%}
+			{% for view in data.views %}
+			<figure class="hover-img">
+				<img src="https://picsum.photos/id/200/440/320.jpg" />
+				<figcaption>
+					<h3><a href="/{{view}}">{{view}}</a></h3>
+				</figcaption>
+			</figure>
+			{% endfor %}
+			{% endif%}
+			<figure class="hover-img">
+				<img src="https://picsum.photos/id/200/440/320.jpg" />
+				<figcaption>
+					<h3><a href="{{ url_for('logout') }}">Bye</a></h3>
+				</figcaption>
+			</figure>
+			
+			</ul>
+		</nav>
+		<div class="container">
+			{% block body %}{% endblock %}
+		</div>
+	</main>
+	<footer>
+		<h2>Botones fijos de la aplicacion</h2>
+	</footer>
+</body>
+
+</html>
