@@ -2,64 +2,48 @@
 from flask import url_for, redirect, render_template, flash, g, session, request
 from app import app
 # from app.models import User
-from app.models import getUserData
+from app.models import user
+
+@app.route('/')
+def index():
+	return redirect(url_for('apk'))
+	return redirect(url_for('ruteo',page='login'))
 
 @app.route('/app',methods=['get'])
 def apk():
+	args = dict(request.args)
 	if 'username' in session:
-		data=getUserData(session["username"])
-		args = dict(request.args)
-		if 'app' in args: 
-			app = args['app']
-			data['app'] = app
-		else: app = data['app']
-		if request.method == 'get':
-			return  render_template(f'{app}.html',data=data)
+		data=user.getUserData(session["username"])
+		dataApp = data['app']
+		webapp = dataApp['nm']
+		# por defecto viene organizada la app q mas utiliza el usuario
+		page = dataApp['view'][0]
+		data['webapp']=webapp
+		if 'page' in args: page = args['page']
+		print(data)		
+		return  render_template(f'{webapp}/{page}.html',data=data)
+	else:
+		if 'webApp' in args:
+			return  render_template(args['webApp']+'/'+args['webApp']+'.html',data={'app':args['webApp']})
 		else:
-			return  render_template(f'{app}.html',data=data)
-	else:
-		return redirect(url_for('login'))
+			return redirect(url_for('login'))
 
-@app.route('/')
-def index():	
-	return redirect(url_for('apk'))
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-	error = None
+@app.route('/<webApp>', methods=['GET','POST'])
+def html(webApp=None):
 	if request.method == 'POST':
-		if request.form['username'] != 'juanklg' or request.form['password'] != 'admin':
-			error = 'Invalid credentials'
-			return render_template('login.html', error=error)
-		else:
-			session['username'] = request.form['username']
-			return redirect(url_for('apk'))
-	else:
-		return render_template('login.html', data={'error':error})
-
-@app.route('/register', methods=['GET', 'POST'])
-def register():
-	error = None
-	if request.method == 'POST':
-		flash('usuario registrado de forma exitosa')
-		return redirect(url_for('login'))
-	else:
-		return render_template('register.html',error=error)
-
-@app.route('/logout')
-def logout():
-    session.pop('username', None)
-    return redirect(url_for('index'))
-
-@app.route('/<param>', methods=['GET','POST'])
-def html(param=None):
-	if request.method == 'POST':
-		print(request.form)
+		print('entrada por post de un endpont',request.form)
+		return {}
 	else:
 		if 'username' in session:
-			return redirect(url_for('apk',app=param))
+			return redirect(url_for('apk',page=webApp))
 		else:
-			return render_template('app.html',	data={'app':'MakerDream'})
+			return redirect(url_for('login'))
+
+# usp la app y creo un ruteo pata las paginas
+# @app.route("/page/<page>", methods=['GET'])
+# def ruteo(page:None):    
+#     textoHtml = render_template(f'{page}.html')
+#     return textoHtml
 
 # @app.route('/new/')
 # @login_required

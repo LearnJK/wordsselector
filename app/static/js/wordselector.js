@@ -1,4 +1,4 @@
-console.log('Corriendo el word selector js');
+console.log('Corriendo el wordselector js');
 // Se levanta el elemento
 function handleDragStart(e) {
     this.style.opacity = '0.4';    

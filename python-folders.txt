@@ -1,0 +1,23 @@
+'''
+# Carpeta raiz
+- carpeta app
+    __init__.py
+    db
+    models
+    controllers
+        views.py
+    carpeta templates
+        index.html
+        carpeta layouts
+            layout.html
+            uselayout.html
+
+    carpeta static
+        carpeta css
+            global.css
+            layout.css
+            index.css
+        carpeta img
+        
+        carpeta js
+- run.py

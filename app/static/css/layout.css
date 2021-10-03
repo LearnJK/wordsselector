@@ -1,0 +1,26 @@
+/* * {
+    box-sizing: border-box;
+} */
+main {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+main nav {
+    -webkit-flex: 2;
+    -ms-flex: 2;
+    flex: 2;    
+}
+main .container{
+    -webkit-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
+}
+/* --------------------------------------------------- */
+@media (max-width: 600px) {
+    main {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}

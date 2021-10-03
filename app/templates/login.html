@@ -1,20 +1,22 @@
-{% extends "layout/layout.html" %}
+{% extends "layouts/layout.html" %}
 
-{% block body %}
-<h1>Login</h1>
+{% block container %}
 {% if error %}
 <p class=error><strong>Error:</strong> {{ error }}</p>
 {% endif %}
-<div class='login'>
+
+<h2>Login</h2>
+<div class='{{data.webapp}}'>
     <form method='POST'>
         <dl>            
             <dt>Username:
-            <dd><input type='text' name='username'>
+            <dd><input type='text' name='username' required>
 
             <dt>Password:
-            <dd><input type='password' name='password'>
+            <dd><input type='password' name='password' required>
         </dl>
         <input type='submit' value='Login'>
     </form>
 </div>
+
 {% endblock %}

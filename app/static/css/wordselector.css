@@ -7,7 +7,9 @@ div.app{
 
 div.texto,div.listas{
     background-color: blueviolet;
+    max-width: 300px;
     max-height: 500px;
+    /* width: 100%; */
     margin: 20px;
     padding: 5px;
     border-radius: 5px;
@@ -18,18 +20,9 @@ div.texto,div.listas{
         0 4px 4px hsl(0deg 0% 0% / 0.075),
         0 8px 8px hsl(0deg 0% 0% / 0.075),
         0 16px 16px hsl(0deg 0% 0% / 0.075);
-}
-@media (max-width: 600px) {
-    div.texto,div.listas{
-        max-height: 170px;
-    }
-}
-
-div.texto{
-    max-width: 300px;
-    width: 100%;
     overflow-y: scroll;
 }
+/* ------------------------Palabras-------------------- */
 p.idea{
     display: flex;
     flex-flow: row wrap;
@@ -42,7 +35,7 @@ p.idea > span{
     cursor: move;
     color: hotpink;
     margin: 2px;
-    padding: 2px;    
+    padding: 2px;
 }
 
 /* ---------------------------------------- */
@@ -69,7 +62,6 @@ div.lista > p{
     font-weight: bolder;
 }
 /* -------------------------------------------- */
-
 .conten {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -84,4 +76,10 @@ div.lista > p{
 }
 .box.over {
     border: 3px dotted #666;
+}
+/* ------------------------------------------- */
+@media (max-width: 600px) {
+    div.texto,div.listas{
+        max-height: 170px;
+    }
 }

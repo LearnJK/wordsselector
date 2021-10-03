@@ -1,4 +1,5 @@
-original = '''
+proyecto = {
+    'original': '''
 la idea es tener una app donde los estudiantes ingresen con su Usuario
 yo habilito la plataforma y q solo sea con el Usuario
 puedo tener un estado para indicar si el usuario se encuentra en su franja
@@ -38,47 +39,43 @@ cada palabra va a estar en una lista, la palabra no pued estar en 2 listas, pero
 es decir si el texto tiene 100 palabras, las 100 palabras deben estar distribuidas entre las diferentes clasificaciones o listas que se hicieron
 
 con pandas podemos procesar despues la longitud de las plabras, y hacer algunas trasnformaciones y estadisticas
+''',
+    'corto': 
 '''
-# ------------------------------------user----------------------------------- #
-usuario = {}
+Probando el corto
+'''
+}
 
-def getUserData(usuario='dev'):
-    user = {}
-    # user['texto'] = createObjectWord(original)
-    user['texto'] = actionCWT()
-    # user['views'] = ['wordselector','battleracing']
-    user['views'] = ['battleracing','wordselector'] 
-    user['listas'] = getList(user)
-    user['user'] = usuario
-    user['app'] = user['views'][0]
-    
-    return user
+def getProyectData(proyect='original'):
+    # get proyect information
+    proyect = {'proyect':proyect}
+    proyect['views'] = [
+        'wordselector', 'selector'
+        # 'battleracing', 'tester'
+    ]    
+    proyect['texto'] = createWordText(proyect['proyect'])
+    proyect['listas'] = getList(proyect)
+    return proyect
 # -----------------------------------listas---------------------------------- #
-def getList(user):  
+def getList(user):
     listas = []
-    return listas
+    return listas    
 
-def createWordText(text):#esta creacion solo se realiza la primera vez
+def createWordText(text='original'):  # esta creacion solo se realiza la primera vez
     ps = []
-    parrafos = text.split('\n')
+    parrafos = proyecto[text].split('\n')
     for p in parrafos:
         words = p.split()
-        if(len(words)>0):
+        if(len(words) > 0):
             lwords = []
             for word in words:
                 dword = {}
-                dword['word']=word
-                dword['list']=None
-                dword['color']=None                
-                dword['index']=len(ps)
+                dword['word'] = word
+                dword['list'] = None
+                dword['color'] = None
+                dword['index'] = len(ps)
                 lwords.append(dword)
-            ps.append(lwords)    
+            ps.append(lwords)
     return ps
-
-def actionCWT(text=None):
-    if(text):
-        return createWordText(text)
-    else:
-        return createWordText(original)
 
 # print('listas'.center(75,'-'))

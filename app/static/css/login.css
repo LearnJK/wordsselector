@@ -1,58 +1,11 @@
 h1{
+    padding: 50px;
+    margin: 0;
+}
+h2{
     text-align: center;
-    text-shadow: 2px 2px 2px #a8dadc;
 }
-div.container{
-    margin: 10px;
-}
-div.home,div.login,div.register{
-    max-width: 600px;
-    margin: auto;
-}
-
-div.app{
-    display: flex;
-    flex-flow: row wrap;
-}
-div.texto{
-    background-color: blueviolet;
-    max-width: 300px;
-    max-height: 600px;
-    overflow-y: scroll;
-    margin: 5px;
-    padding: 5px;
-}
-div.listas{
-    background-color: blueviolet;
-    max-width: 300px;
-    max-height: 600px;    
-    margin: 5px;
-    padding: 5px;
-    /* display: flex;
-    flex-flow: column; */
-}
-
-p.idea{
-    display: flex;
-    flex-flow: row wrap;
-    /* justify-content: center; */
-    margin: 7px;
-}
-
-p.idea > span{
-    background-color: chartreuse;
-    border-radius: 5px;
-    cursor: move;
-    color: hotpink;
-    margin: 2px;
-    padding: 2px;    
-}
-
-div.lista{
-    margin: 2px;
-    padding: 2px;
-    max-height: 100px;
-    max-width: 100px;
-    border-radius: 2px;
-    border-style: dotted;
+.login{
+    text-align: center;
+    margin: 50px;
 }

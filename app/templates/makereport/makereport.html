@@ -1,0 +1,12 @@
+{% extends "layouts/layout.html" %}
+
+{% block container %}
+<div class="{{data.webapp}}">
+    <div class="botones">
+        {%for acc in data.makeracc%}
+            <button>{{acc}}</button>
+        {%endfor%}
+    </div>
+</div>
+<script src="static/js/wordselector.js"></script>
+{% endblock %}

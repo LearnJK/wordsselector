@@ -1,0 +1,12 @@
+{% extends "layouts/layout.html" %}
+
+{% block container %}
+<div class='home'>
+    <p>Esta es una aplicacion que pretende ayudar a los emprendedores a organizar sus ideas.</p>
+    <p>Contruyendo una redaccion dentro de la aplicacion se realiza un juego de palabras que permite organizar 
+        y ampliar el foco de las ideas, y asi lograr construir unos requerimientos de las ideas para lograr materializarlas
+    </p>
+    <p>Si ya eres parte de esto da click <a href="{{ url_for('apk',page='selector') }}">Aqui</a></p>
+    <p>Si deseas unierte a el experimento puedes <a href="{{ url_for('register') }}">registrate aqui</a> para empezar a construir</p>
+</div>
+{% endblock %}
