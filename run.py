@@ -1,10 +1,9 @@
-from app import app
+from app import app,socketio
 if __name__ == "__main__":
 	port = 5000
-	app.run(port=port)
+	socketio.run(app)
 
-# export FLASK_ENV=development
-# flask run
+# export FLASK_ENV=development && flask run
 
 # cada usuario crea la aplicacion desde 0
 # primero selecciona un nombre

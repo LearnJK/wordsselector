@@ -42,4 +42,3 @@ uploadVideos2 = [
     {'nm':'Up 2.2 G48', 'lk':'https://ruta1.imaster.academy/course/view.php?id=908&section=8'},
     {'nm':'Up 2.2 G61', 'lk':'https://ruta1.imaster.academy/course/view.php?id=919&section=8'},
 ]
-
