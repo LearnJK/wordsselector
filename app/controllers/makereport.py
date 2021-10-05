@@ -6,7 +6,6 @@ from app.models import makereport
 
 @socketio.on('FToPMsj')
 def handleFtoBCmd(json):
-    print(json)
     print('Message: ',str(json))
     
 @socketio.on('FToPCmd')
