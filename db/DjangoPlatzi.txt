@@ -1,0 +1,13 @@
+## Django platzi
+
+### porque?
+Django me ha sorprendido y me he familiarizado con este lenguaje tan facil de aprender y de implementar
+Aprovechemos que hemos creado cosas interesantes para mejorar la aplicacion
+
+### Inicio
+
+1. Apenas se instala django se habilita el django-admin y su lista de comandos
+2. Iniciar un nuevo proyecto con `django-admin startproject`
+4. Ejecutar `python manage.py`mostrara la lista de comandos disponiblespara cada app
+3. Configurar settings
+
