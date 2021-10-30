@@ -8,6 +8,15 @@ Aprovechemos que hemos creado cosas interesantes para mejorar la aplicacion
 
 1. Apenas se instala django se habilita el django-admin y su lista de comandos
 2. Iniciar un nuevo proyecto con `django-admin startproject`
-4. Ejecutar `python manage.py`mostrara la lista de comandos disponiblespara cada app
+3. Ejecutar `python manage.py`mostrara la lista de comandos disponibles para cada miniapp
+
+de esta forma ya esta funcionando la app solo es correr el comando de 
+
+python django/manage.py runserver
+
+### Ideas
+Hay q coonstruir un constructur del settings.py, con python puedo agregar lineas ael doc en puntos especificos
+
+
 3. Configurar settings
 

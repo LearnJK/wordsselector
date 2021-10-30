@@ -1,0 +1,14 @@
+section{
+    text-align: center;
+}
+
+.ytVid{
+    height: 350px;
+}
+
+@media (min-width: 580px) {
+    .ytVid{
+        width: 80%;
+        height: 500px;
+    }
+}

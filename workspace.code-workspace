@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "templates"
+		},
+		{
+			"path": "static"
+		},
+		{
+			"path": "django\\wordselector"
+		},
+		{
+			"path": "django\\post"
+		},
+		{
+			"path": "django\\mduser"
+		}
+	]
+}
