@@ -1,3 +1,11 @@
 from django.shortcuts import render
+from wordselector import views as wose
 
-# Create your views here.
+def createDjangoUser(req):
+    pass
+
+def login(req):
+    
+    return render(req,'users/login.html')
+
+
