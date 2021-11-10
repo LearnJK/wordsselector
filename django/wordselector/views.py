@@ -19,7 +19,10 @@ theme = [
 links = [
     'https://docs.djangoproject.com/en/3.2/ref/contrib/auth/#user-model',
     'https://ccbv.co.uk/projects/Django/3.2/django.views.generic.base/View/',
-    'https://docs.djangoproject.com/es/3.2/contents/'
+    'https://docs.djangoproject.com/es/3.2/contents/',
+    'https://docs.djangoproject.com/en/3.2/topics/class-based-views/',
+    'https://docs.djangoproject.com/en/3.2/topics/db/examples/',
+    'https://htmlcheatsheet.com/js/',
     # 'https://docs.djangoproject.com/es/3.2/'
 ]
 
